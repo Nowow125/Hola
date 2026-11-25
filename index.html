@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111217" />
+  <meta name="description" content="Huddle is a little corner of the internet for your people." />
+  <title>Huddle — your people, your place</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="rail" aria-label="Workspaces">
+    <button class="brand-icon" data-action="home" title="Huddle home" aria-label="Huddle home"><svg viewBox="0 0 32 32" fill="none"><path d="M7 7.5v17M25 7.5v17M7 16h18" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="16" cy="16" r="3" fill="currentColor"/></svg></button>
+    <div class="rail-divider"></div>
+    <button class="server-icon selected" title="The Cozy Corner" aria-label="The Cozy Corner"><span>✳</span></button>
+    <button class="server-icon server-purple" data-action="workspace" title="Design Buddies" aria-label="Design Buddies">✺</button>
+    <button class="server-icon server-orange" data-action="workspace" title="After Hours" aria-label="After Hours">☼</button>
+    <button class="server-icon server-add" data-action="create-server" title="Add a workspace" aria-label="Add a workspace">+</button>
+    <div class="rail-spacer"></div>
+    <button class="rail-bottom" data-action="discover" title="Discover communities" aria-label="Discover communities">⌘</button>
+    <div class="rail-divider"></div>
+    <button class="avatar rail-avatar" data-action="profile" title="Your profile" aria-label="Your profile"><img src="https://i.pravatar.cc/100?img=47" alt=""/><i></i></button>
+  </aside>
+
+  <aside class="sidebar" id="sidebar">
+    <button class="workspace-title" data-action="workspace-menu"><span><strong>The Cozy Corner</strong><small>YOUR HAPPY PLACE</small></span><span class="chevron">⌄</span></button>
+    <div class="sidebar-scroll">
+      <div class="community-card"><div class="community-art"><span>✳</span></div><div class="community-copy"><strong>The Cozy Corner</strong><span>Good people, good energy ✨</span></div><button data-action="invite" aria-label="Invite people">↗</button></div>
+      <button class="sidebar-link" data-action="browse"><span class="side-icon">◫</span> Browse channels <span class="shortcut">⌘ K</span></button>
+      <button class="sidebar-link" data-action="events"><span class="side-icon">▦</span> Events <span class="event-count">2</span></button>
+      <div class="section-label"><span>YOUR CHANNELS</span><button data-action="create-channel" title="Add channel" aria-label="Add channel">+</button></div>
+      <nav id="channel-list" aria-label="Channels"></nav>
+      <div class="section-label voice-label"><span>HANGOUT SPOTS</span><button data-action="create-channel" title="Add channel" aria-label="Add channel">+</button></div>
+      <button class="channel voice" data-action="voice"><span class="channel-hash">◖))</span><span>the lounge</span><span class="voice-avatars"><img src="https://i.pravatar.cc/40?img=32" alt=""/><img src="https://i.pravatar.cc/40?img=12" alt=""/></span></button>
+      <button class="channel voice" data-action="voice"><span class="channel-hash">◖))</span><span>focus room</span></button>
+      <div class="sidebar-invite"><div class="invite-illustration">✦ <span>♡</span> ✧</div><strong>Better together.</strong><p>Good conversations are even better with friends.</p><button data-action="invite">Invite your people <span>↗</span></button></div>
+    </div>
+    <div class="user-panel"><button class="avatar user-avatar" data-action="profile" aria-label="Edit profile"><img src="https://i.pravatar.cc/100?img=47" alt=""/><i></i></button><button class="user-info" data-action="profile"><strong id="current-user">Alex Morgan</strong><span>● &nbsp; Online</span></button><button class="icon-button" data-action="settings" title="Settings" aria-label="Settings">⚙</button></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><button class="mobile-menu icon-button" data-action="mobile-menu" aria-label="Open menu">☰</button><div class="top-channel"><span class="top-hash">#</span><div><strong id="header-channel">general</strong><span id="header-description">Your space for all things community</span></div></div><div class="top-actions"><button class="icon-button top-action" data-action="notifications" title="Notifications" aria-label="Notifications">♧</button><button class="icon-button top-action" data-action="pins" title="Pinned messages" aria-label="Pinned messages">♧</button><span class="top-separator"></span><button class="icon-button top-action members-toggle active" data-action="members" title="Toggle members" aria-label="Toggle members">♙</button><button class="search-button" data-action="search"><span>⌕</span> Search <kbd>⌘ K</kbd></button><button class="icon-button help" data-action="help" title="Help" aria-label="Help">?</button></div></header>
+    <div class="content"><section class="chat" aria-label="Channel conversation"><div class="chat-scroll" id="chat-scroll"><div class="channel-intro" id="channel-intro"></div><div id="messages"></div><div id="empty-search" class="empty-search" hidden>No messages found. Try another search.</div></div><div class="composer-wrap"><div class="reply-preview" id="reply-preview" hidden></div><form class="composer" id="message-form"><button type="button" class="add-attachment" data-action="attachment" aria-label="Add attachment">+</button><input id="message-input" autocomplete="off" maxlength="2000" placeholder="Message #general" aria-label="Write a message"/><div class="composer-actions"><button type="button" data-action="gift" title="Send a little joy" aria-label="Send a little joy">♧</button><button type="button" data-action="emoji" title="Add emoji" aria-label="Add emoji">☺</button><button type="submit" class="send-button" title="Send message" aria-label="Send message">➤</button></div></form><div class="composer-hint">Be kind, be yourself, and make someone’s day a little brighter <span>✦</span></div></div></section><aside class="members" id="members"><div class="members-heading"><span>THE PEOPLE</span><button data-action="invite" title="Invite people">＋</button></div><div class="online-summary"><span class="online-dot"></span><strong>12 members online</strong><span class="sparkle">✦</span></div><div class="member-group"><div class="member-label">AROUND NOW <span>— 8</span></div><div id="online-members"></div></div><div class="member-group"><div class="member-label">TAKING A BREATHER <span>— 4</span></div><div id="away-members"></div></div><div class="members-footer"><span>✳</span><p>A little corner of the internet,<br/><strong>made better with you.</strong></p></div></aside></div>
+  </main>
+</div>
+<div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" data-action="close-modal" aria-label="Close">×</button><div id="modal-content"></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>
